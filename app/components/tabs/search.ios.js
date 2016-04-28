@@ -18,7 +18,7 @@ var Styles = StyleSheet.create({
 
   },
   map: {
-    flex:10,
+    flex:30,
     alignItems: 'center',
     justifyContent: 'center',
 
@@ -33,10 +33,10 @@ var Styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     borderColor: 'gray',
-    borderWidth:2,
+    //borderWidth:2,
     //alignSelf: 'center',
-    padding: 4,
-    flex:1
+    padding: 10,
+    flex:2
   }
 });
 

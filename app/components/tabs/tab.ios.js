@@ -51,6 +51,7 @@ class Tab extends Component {
       </TabBarIOS.Item>
 
       <TabBarIOS.Item
+      title="Reviews"
       selected={this.state.selectedTab ==='reviews'}
       systemIcon='featured'
       onPress={()=> {

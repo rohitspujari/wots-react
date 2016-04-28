@@ -11,6 +11,7 @@ import React, {
 } from 'react-native';
 
 var Swiper = require('react-native-swiper');
+var Itemlist = require('../common/itemlist');
 
 var styles = StyleSheet.create({
   description: {
