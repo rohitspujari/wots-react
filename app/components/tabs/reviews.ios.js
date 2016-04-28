@@ -1,4 +1,4 @@
-'use strict';
+//'use strict';
 
 
 
@@ -10,6 +10,8 @@ import React, {
   TouchableHighlight
 } from 'react-native';
 
+var Swiper = require('react-native-swiper');
+
 var styles = StyleSheet.create({
   description: {
     fontSize: 15,
@@ -20,16 +22,23 @@ var styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'column',
     marginTop:20,
-    marginBottom:50
-    //justifyContent: 'center',
-    //alignItems: 'stretch'
+    marginBottom:50,
+    justifyContent: 'center',
+    alignItems: 'stretch'
     //backgroundColor: '#000000'
   },
   info: {
     flex: 1,
 
-    // justifyContent: 'center',
-    // alignItems: 'center',
+    justifyContent: 'center',
+    alignItems: 'center'
+    //backgroundColor: 'blue'
+  },
+  list: {
+    flex: 4,
+
+    justifyContent: 'center',
+    alignItems: 'center'
     //backgroundColor: 'blue'
   },
   rating: {
@@ -39,10 +48,10 @@ var styles = StyleSheet.create({
     //backgroundColor: '#000000'
   },
   comment: {
-    flex: 2
+    flex: 5,
     // justifyContent: 'center',
     // alignItems: 'center',
-    //backgroundColor: '#000000'
+    backgroundColor: 'gray'
   },
   submit: {
     flex: 3,
@@ -51,13 +60,40 @@ var styles = StyleSheet.create({
 
     //alignItems: 'center'
     //backgroundColor: '#000000'
+  },
+  wrapper: {
+    //padding: 50,
+    //marginBottom: 50
+  },
+  slide: {
+    flex: 1,
+    justifyContent: 'center',
+    padding: 5,
+    alignItems: 'center',
+    backgroundColor: '#9DD6EB',
+  },
+  slide2: {
+
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#97CAE5',
+  },
+  slide3: {
+
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#92BBD9',
+  },
+  text: {
+    color: '#fff',
+    fontSize: 30,
+    fontWeight: 'bold',
   }
 });
 
 var Reviews = React.createClass({
   render: function(){
-    return <View style={styles.container}>
-      {this.infoSection()}
+    return <View style={[styles.container, this.border('blue')]}>
       {this.ratingSection()}
       {this.commentSection()}
       {this.submitButton()}
@@ -68,8 +104,8 @@ var Reviews = React.createClass({
   },
   border: function(color){
     return {
-      borderColor: color,
-      borderWidth: 4
+      //borderColor: color,
+      //borderWidth: 4
     }
   },
   infoSection: function() {
@@ -80,17 +116,37 @@ var Reviews = React.createClass({
     </Text>
     </View>
   },
-  ratingSection: function() {
+  listSection: function() {
     return <View
-    style={[this.border('blue'),styles.rating]}>
+    style={[this.border('red'),styles.list]}>
     <Text>
-    Ratings
+    List Section
     </Text>
     </View>
   },
+  ratingSection: function() {
+    return <Swiper
+    style={[styles.wrapper, this.border('yellow')]}
+    showsButtons={false} showsPagination={true} height={450}>
+      <View style={[styles.slide]}>
+        {this.infoSection()}
+        {this.listSection()}
+
+        <Text style={styles.text}>Hello Swiper</Text>
+      </View>
+      <View style={[styles.slide]}>
+        <Text style={styles.text}>Beautiful</Text>
+      </View>
+      <View style={[styles.slide]}>
+        <Text style={styles.text}>And simple</Text>
+      </View>
+    </Swiper>
+
+
+  },
   commentSection: function() {
     return <View
-    style={[this.border('yellow'),styles.comment]}>
+    style={[this.border('purple'),styles.comment]}>
     <Text>
     Comments
     </Text>

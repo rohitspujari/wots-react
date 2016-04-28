@@ -26,7 +26,7 @@ class Cash extends Component{
     return(
       <View style={styles.container}>
       <Text style={styles.description}>
-      Welcome to your Cash!
+      Welcome to your Csh!
       </Text>
       </View>
     );

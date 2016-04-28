@@ -5,25 +5,38 @@ import React, {
   StyleSheet,
   MapView,
   View,
-  Text
+  Text,
+  TextInput
 } from 'react-native';
 
 var Styles = StyleSheet.create({
   container:
   {
-    flex:1
+    flex:1,
+    marginTop: 20,
+    marginBottom: 50
+
   },
   map: {
-    flex:3,
+    flex:10,
     alignItems: 'center',
     justifyContent: 'center',
-    marginTop: 20
+
   },
   placeWrap: {
-    flex:2,
+    flex:15,
     alignItems: 'center',
     justifyContent: 'center',
-    marginBottom: 50
+
+  },
+  search: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderColor: 'gray',
+    borderWidth:2,
+    //alignSelf: 'center',
+    padding: 4,
+    flex:1
   }
 });
 
@@ -38,6 +51,13 @@ var Search = React.createClass({
       longitude: 0
     }];
     return<View style={Styles.container}>
+
+    <TextInput placeholder='search'
+     onChangeText={(text)=>this.setState({search: text})}
+     value={this.state.search}
+     style={Styles.search}/>
+
+
     <MapView
     annotations={pins}
     onRegionChangeComplete={this._onRegionChangeComplete}

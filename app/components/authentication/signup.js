@@ -37,13 +37,13 @@ var SignUp = React.createClass({
      secureTextEntry={true} style={Styles.input}/>
 
     <Button text={'Sign Up'} onPress={this.onSignUpPress}/>
-    <Button text={'Sign in'} onPress={this.onSignInPress}/>
+    <Button text={'I have an account'} onPress={this.onSignInPress}/>
 
     </View>
   },
   onSignInPress: function(){
     this.props.navigator.pop();
-    
+
   }
 });
 
