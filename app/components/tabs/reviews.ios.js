@@ -25,7 +25,8 @@ var styles = StyleSheet.create({
     marginTop:20,
     marginBottom:50,
     justifyContent: 'center',
-    alignItems: 'stretch'
+    alignItems: 'stretch',
+    
     //backgroundColor: '#000000'
   },
   info: {
